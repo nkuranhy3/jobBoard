@@ -41,6 +41,7 @@ app.use(express.static('public'));
 app.use(require("./routes/index"));
 app.use(require('./routes/jobs'));
 
-
-
-app.listen(app.get('port'), () => console.log('Listening on port ' + app.get('port')));
+const PORT = 4000;
+app.listen(PORT, () =>
+  console.log(`JobBoaard APP is running on http://localhost:${PORT}`)
+);

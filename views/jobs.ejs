@@ -1,0 +1,26 @@
+<h1>this is jobs page </h1>
+
+<% jobs.forEach(function(job){ %>
+    <div>
+        <p>hii,
+            <b>
+                <%= job.company %>
+            </b>, has opportunities for you, There is a
+            <b>
+                <%= job.name %>
+            </b> job at
+            <b>
+                <%= job.location %>
+            </b>, the qualifications are
+            <b>
+                <%= job.qualification %>
+            </b>
+            <b>
+                <%= job.description %>
+            </b>
+        </p>
+        <p>
+            <a href="/jobs/<%= job._id %>" >More Info...</a>
+        </p>
+    </div>
+    <% }); %>

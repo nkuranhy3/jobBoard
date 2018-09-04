@@ -50,7 +50,7 @@ router.get("/jobs/:id", function (req, res) {
             console.log(err);
         } else {
             //render show template with that job
-            res.render("show", { job: foundjob });
+            res.render("show.ejs", { job: foundjob });
         }
     });
 })

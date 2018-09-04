@@ -6,10 +6,16 @@ var User = require("../models/user");
 
 
 router.get('/', (req, res) => {
-  res.render('landing.ejs', {
-    pageTitle: 'Home',
-  });
+  Job.find({}, function (err, allJobs) {
+    if (err) {
+        console.log(err);
+    } else {
+        res.render("jobs", { jobs: allJobs });
+    }
 });
+});
+
+
 
 // show register form
 router.get("/register", function (req, res) {
@@ -25,7 +31,7 @@ router.post("/register", function (req, res) {
       return res.render("register");
     }
     passport.authenticate("local")(req, res, function () {
-      res.redirect("/createJob");
+      res.redirect("/new");
     });
   });
 });
@@ -38,7 +44,7 @@ router.get("/login", function (req, res) {
 //handling login logic
 router.post("/login", passport.authenticate("local",
   {
-    successRedirect: "/createJob",
+    successRedirect: "/new",
     failureRedirect: "/login"
   }), function (req, res) {
   });
@@ -58,11 +64,13 @@ function isLoggedIn(req, res, next) {
 }
 
 
-router.get('/createJob', isLoggedIn, (req, res) => {
-  res.render('createJob.ejs', {
+router.get('/new', isLoggedIn, (req, res) => {
+  res.render('new.ejs', {
     pageTitle: 'create Job',
   });
 });
+
+
 
 
 module.exports = router;

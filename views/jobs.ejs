@@ -1,26 +1,29 @@
-<h1>this is jobs page </h1>
+<% include ./header %>
 
-<% jobs.forEach(function(job){ %>
-    <div>
-        <p>hii,
-            <b>
-                <%= job.company %>
-            </b>, has opportunities for you, There is a
-            <b>
-                <%= job.name %>
-            </b> job at
-            <b>
-                <%= job.location %>
-            </b>, the qualifications are
-            <b>
-                <%= job.qualification %>
-            </b>
-            <b>
-                <%= job.description %>
-            </b>
-        </p>
-        <p>
-            <a href="/jobs/<%= job._id %>" >More Info...</a>
-        </p>
+<section class="engine"><a href="/">home</a></section><section class="mbr-section info3 cid-r2BM1gB1Pe" id="info3-7">
+  
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="media-container-column title col-12 col-md-10">
+                <h2 class="align-left mbr-bold mbr-white pb-3 mbr-fonts-style display-2">Get your dream web developer job here</h2>
+                <h3 class="mbr-section-subtitle align-left mbr-light mbr-white pb-3 mbr-fonts-style display-5">We are bringing you the high paying jobs from around the world</h3>    
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content11 cid-r2BVPZmnbe" id="content11-9">
+    <% jobs.forEach(function(job){ %>
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+                    <li>Hi friend, <strong><%= job.company.toUpperCase() %></strong> has opportunities for you. There is a <strong><%= job.name.toUpperCase() %></strong> job at <strong><%= job.location.toUpperCase() %></strong>. <a href="/jobs/<%= job._id %>"  class="text-primary">Read more!</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <% }); %>
+</section>
+
+<% include ./footer %>

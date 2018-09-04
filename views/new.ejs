@@ -1,22 +1,53 @@
-<h1>new page</h1>
-
-<form action="/jobs" method="POST">
-    <div class="form-group">
-        <input class="form-control" type="text" name="name" placeholder="name">
-    </div>
-    <div class="form-group">
-        <input class="form-control" type="text" name="company" placeholder="company url">
-    </div>
-    <div class="form-group">
-        <input class="form-control" type="text" name="description" placeholder="description">
-    </div>
-    <div class="form-group">
-        <input class="form-control" type="text" name="location" placeholder="location">
-    </div>
-    <div class="form-group">
-        <input class="form-control" type="text" name="qualification" placeholder="qualification">
-    </div>
-    <div class="form-group">
-        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-    </div>
-</form>
+<% include ./header %>
+    <section class="engine">
+        <a href="/">home</a>
+    </section>
+    <section class="mbr-section info3 cid-r2BM1gB1Pe" id="info3-7">
+        <div class="container">
+            <div class="row justify-content-center">
+                   <div class="title col-12 col-lg-12">
+                       <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+                           Create new job</h2>
+                       <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+                           Tell Applicants about the job, qualifications, start date, and more</h3>
+                   </div>
+            </div>
+        </div>
+        <div class="container">
+                <div class="media-container-column col-lg-10" data-form-type="formoid">
+                        <form class="mbr-form" action="/jobs" method="post" >
+                            <div class="row row-sm-offset">
+                                <div class="col-md-12 multi-horizontal" data-for="name">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-t"><em>Tell Applicants about the Kind of Job</em></label>
+                                        <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-t" placeholder= "">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 multi-horizontal" data-for="company">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-7" for="company-form1-t"><em>Which company is posting this job?</em></label>
+                                        <input type="company" class="form-control" name="company" data-form-field="company" required="" id="company-form1-t" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 multi-horizontal" data-for="location">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-12" for="location-form1-t"><em>Where will the applicant work? - In office (Specify Location), Work-from-home, or Contact</em></label>
+                                        <input type="tel" class="form-control" name="location" data-form-field="location" id="location-form1-t" placeholder="" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" data-for="qualification">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="qualification-form1-t"><em>What is the qualifications for the job? Degree, Years of Work Experience, or Other?</em></label>
+                                    <textarea type="text" class="form-control" name="qualification" rows="7" data-form-field="qualification" id="qualification-form1-t"></textarea>
+                                </div>
+                            <div class="form-group" data-for="description">
+                                <label class="form-control-label mbr-fonts-style display-7" for="description-form1-t"><em>Please Describe a lot about your demand. What do you want to accomplish?</em></label>
+                                <textarea type="text" class="form-control" name="description" rows="7" data-form-field="description" id="description-form1-t"></textarea>
+                            </div>
+                
+                            <span class="input-group-btn"><button type="submit" class="btn btn-primary btn-form display-5">post job</button></span>
+                        </form>
+                </div>
+        </div>
+    </section>
+    <% include ./footer %>
